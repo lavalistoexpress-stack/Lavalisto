@@ -1122,7 +1122,8 @@ e.preventDefault();
 const nombre = document.getElementById('nombre').value;
 const telefono = document.getElementById('telefono').value;
 const direccion = document.getElementById('direccion').value;
-const servicio = document.getElementById('servicio').value;
+const servicioSelect = document.getElementById('servicio');
+const servicio = servicioSelect.options[servicioSelect.selectedIndex].text;
 const mensaje = document.getElementById('mensaje').value;
 
 const texto = encodeURIComponent(
