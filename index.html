@@ -1106,21 +1106,24 @@ const direccion = document.getElementById('direccion').value;
 const servicio = document.getElementById('servicio').value;
 const mensaje = document.getElementById('mensaje').value;
 
-const texto =
-`Hola LavaListo Express,%0A%0A`
-+ `Quiero solicitar recogida.%0A%0A`
-+ `Nombre: ${nombre}%0A`
-+ `Teléfono: ${telefono}%0A`
-+ `Dirección: ${direccion}%0A`
-+ `Servicio: ${servicio}%0A`
-+ `Observaciones: ${mensaje}`;
+const texto = encodeURIComponent(
+`Hola LavaListo Express,
+
+Quiero solicitar recogida.
+
+Nombre: ${nombre}
+Teléfono: ${telefono}
+Dirección: ${direccion}
+Servicio solicitado: ${servicio}
+
+Observaciones:
+${mensaje}`
+);
 
 window.open(
 `https://wa.me/573166977616?text=${texto}`,
 '_blank'
 );
-
-});
 
 </script>
 
