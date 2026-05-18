@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
@@ -63,137 +64,38 @@ right:-150px;
 }
 
 .hero{
-max-width:1300px;
+max-width:1400px;
 margin:auto;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
+display:flex;
+justify-content:center;
 align-items:center;
 position:relative;
 z-index:2;
 }
 
-.logo{
+.hero-left{
+width:100%;
 display:flex;
 justify-content:center;
 align-items:center;
 }
 
-.logo img{
-width:750px;
-max-width:100%;
-filter:
-drop-shadow(0 20px 40px rgba(0,0,0,0.35));
-transition:0.4s;
-border-radius:25px;
-}
-
-.logo img:hover{
-transform:scale(1.03);
-}
-
-.hero-left{
-display:flex;
-flex-direction:column;
-justify-content:center;
-}
-
-.slogan{
-margin-top:25px;
-font-size:34px;
-font-weight:700;
-color:white;
-line-height:1.4;
-text-shadow:0 5px 15px rgba(0,0,0,0.2);
-}
-
-.hero-card{
-margin-top:40px;
-background:rgba(255,255,255,0.15);
-backdrop-filter:blur(10px);
-padding:40px;
-border-radius:35px;
-border:1px solid rgba(255,255,255,0.2);
-box-shadow:0 20px 50px rgba(0,0,0,0.15);
-color:white;
-}
-
-.hero-card h2{
-font-size:46px;
-margin-bottom:20px;
-line-height:1.2;
-}
-
-.hero-card p{
-font-size:20px;
-line-height:1.8;
-}
-
-.cta{
-display:inline-block;
-margin-top:35px;
-padding:20px 40px;
-background:#ffe600;
-color:#003cff;
-font-size:20px;
-font-weight:700;
-border-radius:60px;
-text-decoration:none;
-transition:0.3s;
-box-shadow:0 10px 25px rgba(0,0,0,0.25);
-}
-
-.cta:hover{
-transform:translateY(-5px);
-}
-
-.hero-right{
-position:relative;
-}
-
-.hero-right img{
+.main-banner{
 width:100%;
-border-radius:35px;
-box-shadow:0 25px 50px rgba(0,0,0,0.25);
+max-width:1200px;
+border-radius:40px;
+box-shadow:0 30px 60px rgba(0,0,0,0.25);
+animation:floatBanner 5s ease-in-out infinite;
 }
 
-.bubble{
-position:absolute;
-border-radius:50%;
-background:rgba(255,255,255,0.25);
-backdrop-filter:blur(5px);
-animation:float 5s infinite ease-in-out;
-}
-
-.b1{
-width:90px;
-height:90px;
-top:-30px;
-right:50px;
-}
-
-.b2{
-width:60px;
-height:60px;
-left:-20px;
-bottom:100px;
-}
-
-.b3{
-width:75px;
-height:75px;
-bottom:-15px;
-right:120px;
-}
-
-@keyframes float{
+@keyframes floatBanner{
 
 0%{
 transform:translateY(0px);
 }
 
 50%{
-transform:translateY(-20px);
+transform:translateY(-10px);
 }
 
 100%{
@@ -401,25 +303,8 @@ transform:scale(1.05);
 
 @media(max-width:950px){
 
-.hero{
-grid-template-columns:1fr;
-}
-
-.hero-card{
-text-align:center;
-}
-
 .title{
 font-size:42px;
-}
-
-.slogan{
-text-align:center;
-font-size:25px;
-}
-
-.hero-card h2{
-font-size:35px;
 }
 
 .form-grid{
@@ -430,7 +315,7 @@ textarea{
 grid-column:auto;
 }
 
-.logo img{
+.main-banner{
 width:100%;
 }
 
@@ -448,45 +333,7 @@ width:100%;
 
 <div class="hero-left">
 
-<div class="logo">
-
-<img src="logo.png" alt="LavaListo Logo">
-
-</div>
-
-<div class="slogan">
-Tu ropa limpia,<br>
-tu tiempo libre
-</div>
-
-<div class="hero-card">
-
-<h2>
-Recogemos, Lavamos y Entregamos
-</h2>
-
-<p>
-Servicio premium de lavandería a domicilio en Bogotá.
-Nos encargamos de recoger tu ropa,
-lavarla profesionalmente, secarla,
-doblarla y entregarla lista para usar.
-</p>
-
-<a href="#solicitud" class="cta">
-Solicitar Recogida
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-right">
-
-<img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?q=80&w=1200&auto=format&fit=crop">
-
-<div class="bubble b1"></div>
-<div class="bubble b2"></div>
-<div class="bubble b3"></div>
+<img src="banner.jpg" class="main-banner">
 
 </div>
 
