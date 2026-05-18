@@ -26,7 +26,13 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#eef7ff;
+background:
+linear-gradient(
+180deg,
+#f4f9ff 0%,
+#ffffff 40%,
+#f7fbff 100%
+);
 overflow-x:hidden;
 color:#082567;
 }
@@ -36,119 +42,162 @@ color:#082567;
 nav{
 position:fixed;
 top:0;
+left:0;
 width:100%;
-padding:20px 8%;
+padding:22px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
 z-index:999;
-background:rgba(0,0,0,0.15);
-backdrop-filter:blur(10px);
+background:rgba(0,0,0,0.12);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
-nav h1{
-color:white;
-font-size:32px;
+.logo-nav{
+font-size:34px;
 font-weight:800;
+color:white;
+letter-spacing:1px;
 }
 
-nav a{
+.logo-nav span{
+color:#ffe600;
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
 color:white;
 text-decoration:none;
-margin-left:25px;
 font-weight:600;
 transition:0.3s;
 }
 
-nav a:hover{
+.nav-links a:hover{
 color:#ffe600;
 }
 
 /* HERO */
 
 header{
-min-height:100vh;
+min-height:92vh;
 background:
-linear-gradient(135deg,#003cff 0%,#00cfff 100%);
-display:flex;
-justify-content:center;
-align-items:center;
-padding:120px 20px 80px;
+radial-gradient(circle at top left, rgba(255,255,255,0.12), transparent 30%),
+radial-gradient(circle at bottom right, rgba(255,255,255,0.10), transparent 25%),
+linear-gradient(135deg,#003cff 0%,#008dff 45%,#00cfff 100%);
 position:relative;
 overflow:hidden;
-}
-
-header::before{
-content:'';
-position:absolute;
-width:700px;
-height:700px;
-background:rgba(255,255,255,0.08);
-border-radius:50%;
-top:-250px;
-left:-250px;
-}
-
-header::after{
-content:'';
-position:absolute;
-width:500px;
-height:500px;
-background:rgba(255,255,255,0.08);
-border-radius:50%;
-bottom:-250px;
-right:-200px;
+padding:140px 20px 80px;
+display:flex;
+align-items:center;
 }
 
 .hero{
 max-width:1400px;
+margin:auto;
 width:100%;
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
+grid-template-columns:1.05fr 1fr;
+gap:70px;
 align-items:center;
 position:relative;
 z-index:2;
 }
 
-.hero-left img{
+.hero-left{
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.hero-left::before{
+content:'';
+position:absolute;
+width:450px;
+height:450px;
+background:rgba(255,255,255,0.12);
+border-radius:50%;
+filter:blur(20px);
+z-index:-1;
+}
+
+.hero-banner{
 width:100%;
+max-width:640px;
 border-radius:40px;
-box-shadow:0 30px 60px rgba(0,0,0,0.25);
+box-shadow:
+0 35px 80px rgba(0,0,0,0.25),
+0 10px 30px rgba(0,0,0,0.18);
+transition:0.5s;
+}
+
+.hero-banner:hover{
+transform:translateY(-8px);
 }
 
 .hero-right{
+background:rgba(255,255,255,0.10);
+backdrop-filter:blur(12px);
+padding:50px;
+border-radius:40px;
+border:1px solid rgba(255,255,255,0.15);
+box-shadow:0 25px 60px rgba(0,0,0,0.12);
 color:white;
 }
 
-.hero-right h2{
-font-size:65px;
-line-height:1.1;
-margin-bottom:25px;
+.hero-right h1{
+font-size:68px;
+line-height:1.05;
+margin-bottom:28px;
 font-weight:800;
 }
 
 .hero-right p{
-font-size:20px;
-line-height:1.8;
+font-size:19px;
+line-height:1.9;
 margin-bottom:35px;
+color:rgba(255,255,255,0.95);
+}
+
+.hero-buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
 }
 
 .btn{
 display:inline-block;
-padding:20px 40px;
-background:#ffe600;
-color:#003cff;
+padding:20px 38px;
+border-radius:60px;
 text-decoration:none;
 font-weight:700;
-border-radius:60px;
-font-size:18px;
+font-size:17px;
 transition:0.3s;
-box-shadow:0 15px 30px rgba(0,0,0,0.25);
 }
 
-.btn:hover{
+.btn-primary{
+background:#ffe600;
+color:#003cff;
+box-shadow:0 15px 30px rgba(0,0,0,0.20);
+}
+
+.btn-primary:hover{
 transform:translateY(-5px);
+}
+
+.btn-secondary{
+border:2px solid rgba(255,255,255,0.4);
+color:white;
+}
+
+.btn-secondary:hover{
+background:white;
+color:#003cff;
 }
 
 /* GENERAL */
@@ -161,10 +210,19 @@ padding:110px 20px;
 
 .title{
 text-align:center;
-font-size:60px;
-margin-bottom:70px;
+font-size:58px;
+margin-bottom:25px;
 font-weight:800;
 color:#003cff;
+}
+
+.subtitle{
+text-align:center;
+max-width:850px;
+margin:0 auto 70px;
+font-size:20px;
+line-height:1.9;
+color:#4d5b7c;
 }
 
 /* CARDS */
@@ -188,17 +246,17 @@ overflow:hidden;
 .card::before{
 content:'';
 position:absolute;
-width:150px;
-height:150px;
+width:170px;
+height:170px;
 background:linear-gradient(135deg,#003cff,#00cfff);
 border-radius:50%;
-top:-50px;
-right:-50px;
+top:-70px;
+right:-70px;
 opacity:0.08;
 }
 
 .card:hover{
-transform:translateY(-10px);
+transform:translateY(-12px);
 }
 
 .card h3{
@@ -210,23 +268,56 @@ color:#003cff;
 .card p{
 font-size:18px;
 line-height:1.8;
+color:#42526e;
 }
 
 .card ul{
-margin-top:20px;
-padding-left:20px;
+margin-top:22px;
+padding-left:22px;
 line-height:2;
-font-size:17px;
+color:#42526e;
 }
 
 .price{
-margin-top:25px;
-font-size:45px;
+margin-top:28px;
+font-size:46px;
 font-weight:800;
 color:#00b894;
 }
 
-/* PASOS */
+/* BENEFITS */
+
+.benefits{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:30px;
+}
+
+.benefit{
+background:white;
+padding:35px;
+border-radius:30px;
+text-align:center;
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.benefit:hover{
+transform:translateY(-10px);
+}
+
+.benefit h3{
+font-size:28px;
+margin-bottom:15px;
+color:#003cff;
+}
+
+.benefit p{
+line-height:1.8;
+color:#4d5b7c;
+}
+
+/* STEPS */
 
 .steps{
 display:grid;
@@ -237,28 +328,94 @@ gap:30px;
 .step{
 background:white;
 padding:40px;
-border-radius:30px;
+border-radius:35px;
 text-align:center;
 box-shadow:0 15px 35px rgba(0,0,0,0.08);
 }
 
 .step-number{
-width:70px;
-height:70px;
+width:75px;
+height:75px;
 background:linear-gradient(135deg,#003cff,#00cfff);
-color:white;
+border-radius:50%;
 display:flex;
 justify-content:center;
 align-items:center;
-border-radius:50%;
-font-size:28px;
-font-weight:800;
 margin:auto auto 25px;
+font-size:30px;
+font-weight:800;
+color:white;
 }
 
 .step h3{
 font-size:28px;
 margin-bottom:15px;
+color:#003cff;
+}
+
+.step p{
+line-height:1.8;
+color:#4d5b7c;
+}
+
+/* ABOUT */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.about-card{
+background:white;
+padding:45px;
+border-radius:35px;
+box-shadow:0 20px 50px rgba(0,0,0,0.08);
+}
+
+.about-card h3{
+font-size:40px;
+margin-bottom:20px;
+color:#003cff;
+}
+
+.about-card p{
+line-height:2;
+font-size:18px;
+color:#4d5b7c;
+}
+
+/* TABLE */
+
+.table-box{
+overflow-x:auto;
+background:white;
+padding:30px;
+border-radius:35px;
+box-shadow:0 20px 50px rgba(0,0,0,0.08);
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+table th{
+background:#003cff;
+color:white;
+padding:20px;
+font-size:18px;
+}
+
+table td{
+padding:18px;
+border-bottom:1px solid #edf2ff;
+font-size:17px;
+color:#42526e;
+}
+
+table tr:hover{
+background:#f7fbff;
 }
 
 /* FORM */
@@ -282,9 +439,16 @@ textarea{
 width:100%;
 padding:20px;
 border-radius:18px;
-border:2px solid #dfe6ff;
+border:2px solid #e3edff;
 font-size:17px;
 outline:none;
+transition:0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+border-color:#00cfff;
 }
 
 textarea{
@@ -313,19 +477,20 @@ transform:scale(1.02);
 
 footer{
 background:#002c8f;
-padding:70px 20px;
+padding:80px 20px;
 text-align:center;
 color:white;
+margin-top:100px;
 }
 
 footer h2{
-font-size:42px;
+font-size:45px;
 margin-bottom:15px;
 }
 
 footer p{
-margin-top:10px;
 font-size:18px;
+margin-top:12px;
 }
 
 /* WHATSAPP */
@@ -336,17 +501,22 @@ right:25px;
 bottom:25px;
 background:#25D366;
 color:white;
-padding:18px 28px;
+padding:18px 30px;
 border-radius:60px;
 text-decoration:none;
 font-weight:700;
 box-shadow:0 15px 30px rgba(0,0,0,0.25);
 z-index:999;
+transition:0.3s;
+}
+
+.whatsapp:hover{
+transform:scale(1.05);
 }
 
 /* RESPONSIVE */
 
-@media(max-width:950px){
+@media(max-width:980px){
 
 .hero{
 grid-template-columns:1fr;
@@ -356,12 +526,16 @@ grid-template-columns:1fr;
 text-align:center;
 }
 
-.hero-right h2{
-font-size:42px;
+.hero-right h1{
+font-size:48px;
 }
 
-.title{
-font-size:42px;
+.hero-buttons{
+justify-content:center;
+}
+
+.about{
+grid-template-columns:1fr;
 }
 
 .form-grid{
@@ -372,12 +546,20 @@ textarea{
 grid-column:auto;
 }
 
-nav{
-padding:20px;
+.title{
+font-size:42px;
 }
 
-nav div{
+.subtitle{
+font-size:18px;
+}
+
+.nav-links{
 display:none;
+}
+
+.hero-banner{
+max-width:100%;
 }
 
 }
@@ -390,9 +572,11 @@ display:none;
 
 <nav>
 
-<h1>LavaListo</h1>
+<div class="logo-nav">
+Lava<span>Listo</span>
+</div>
 
-<div>
+<div class="nav-links">
 
 <a href="#servicios">Servicios</a>
 <a href="#planes">Planes</a>
@@ -409,24 +593,31 @@ display:none;
 
 <div class="hero-left">
 
-<img src="banner.jpg" alt="LavaListo Banner">
+<img src="banner.jpg" class="hero-banner">
 
 </div>
 
 <div class="hero-right">
 
-<h2>
+<h1>
 Tu ropa limpia sin salir de casa
-</h2>
+</h1>
 
 <p>
-En Lavandería Exprés a Domicilio hacemos tu día más fácil con un servicio rápido, confiable y pensado para tu comodidad.
-Recogemos, lavamos y entregamos tus prendas limpias, frescas y listas para usar.
+En Lavandería Exprés a Domicilio hacemos tu día más fácil con un servicio rápido, confiable y pensado para tu comodidad. Recogemos, lavamos y entregamos tus prendas limpias, frescas y listas para usar.
 </p>
 
-<a href="#contacto" class="btn">
+<div class="hero-buttons">
+
+<a href="#contacto" class="btn btn-primary">
 Solicitar Recogida
 </a>
+
+<a href="#servicios" class="btn btn-secondary">
+Ver Servicios
+</a>
+
+</div>
 
 </div>
 
@@ -437,65 +628,73 @@ Solicitar Recogida
 <section>
 
 <h2 class="title">
+¿Por qué elegirnos?
+</h2>
+
+<p class="subtitle">
+Calidad, puntualidad y el mejor cuidado para tu ropa con atención rápida, confiable y servicio totalmente a domicilio.
+</p>
+
+<div class="benefits">
+
+<div class="benefit">
+<h3>Servicio a domicilio</h3>
+<p>Recogemos y entregamos tu ropa directamente en tu hogar.</p>
+</div>
+
+<div class="benefit">
+<h3>Atención rápida</h3>
+<p>Procesos ágiles y entregas oportunas para mayor comodidad.</p>
+</div>
+
+<div class="benefit">
+<h3>Cuidado profesional</h3>
+<p>Tratamiento especializado para conservar tus prendas impecables.</p>
+</div>
+
+<div class="benefit">
+<h3>Ropa fresca</h3>
+<p>Prendas limpias, perfumadas y listas para usar.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">
 ¿Cómo Funciona?
 </h2>
+
+<p class="subtitle">
+Un proceso simple y rápido pensado para que ahorres tiempo.
+</p>
 
 <div class="steps">
 
 <div class="step">
-
-<div class="step-number">
-1
-</div>
-
+<div class="step-number">1</div>
 <h3>Solicita</h3>
-
-<p>
-Agenda la recogida de tu ropa desde la web o WhatsApp.
-</p>
-
+<p>Agenda la recogida desde la web o WhatsApp.</p>
 </div>
 
 <div class="step">
-
-<div class="step-number">
-2
-</div>
-
+<div class="step-number">2</div>
 <h3>Recogemos</h3>
-
-<p>
-Pasamos por tu ropa directamente a tu domicilio.
-</p>
-
+<p>Pasamos por tu ropa directamente a tu domicilio.</p>
 </div>
 
 <div class="step">
-
-<div class="step-number">
-3
-</div>
-
+<div class="step-number">3</div>
 <h3>Lavamos</h3>
-
-<p>
-Tus prendas reciben cuidado profesional y especializado.
-</p>
-
+<p>Lavado profesional con productos de alta calidad.</p>
 </div>
 
 <div class="step">
-
-<div class="step-number">
-4
-</div>
-
+<div class="step-number">4</div>
 <h3>Entregamos</h3>
-
-<p>
-Recibe tu ropa limpia, doblada y lista para usar.
-</p>
-
+<p>Tu ropa limpia, doblada y lista para usar.</p>
 </div>
 
 </div>
@@ -507,6 +706,10 @@ Recibe tu ropa limpia, doblada y lista para usar.
 <h2 class="title">
 Nuestros Servicios
 </h2>
+
+<p class="subtitle">
+Planes adaptados a cada necesidad para ofrecer comodidad, limpieza y ahorro.
+</p>
 
 <div class="grid">
 
@@ -548,3 +751,378 @@ Perfecto para quienes buscan comodidad y frescura.
 <div class="price">
 $28.000
 </div>
+
+</div>
+
+<div class="card">
+
+<h3>Servicio por Prenda</h3>
+
+<p>
+Especial para prendas delicadas o de mayor cuidado.
+</p>
+
+<ul>
+<li>Lavado</li>
+<li>Desmanchado</li>
+<li>Secado</li>
+<li>Planchado</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Bolsa Junta</h3>
+
+<p>
+Entre 30 y 40 prendas lavadas en una misma carga.
+</p>
+
+<ul>
+<li>Lavado</li>
+<li>Secado</li>
+<li>Doblado</li>
+</ul>
+
+<div class="price">
+$55.000
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Bolsa Separada</h3>
+
+<p>
+Separación por colores y texturas para mayor cuidado.
+</p>
+
+<ul>
+<li>Lavado</li>
+<li>Secado</li>
+<li>Doblado</li>
+<li>Separación especializada</li>
+</ul>
+
+<div class="price">
+$60.000
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Planes Mensuales</h3>
+
+<p>
+Planes pensados para clientes frecuentes.
+</p>
+
+<ul>
+<li>Tarifas preferenciales</li>
+<li>Servicio programado</li>
+<li>Mayor ahorro</li>
+<li>Atención constante</li>
+</ul>
+
+<div class="price">
+Desde $200.000
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="nosotros">
+
+<h2 class="title">
+Quiénes Somos
+</h2>
+
+<div class="about">
+
+<div class="about-card">
+
+<h3>Misión</h3>
+
+<p>
+Brindar un servicio de lavandería confiable, práctico y de alta calidad, pensado para facilitar la vida de nuestros clientes mediante soluciones cómodas a domicilio y atención personalizada.
+</p>
+
+</div>
+
+<div class="about-card">
+
+<h3>Visión</h3>
+
+<p>
+Ser una lavandería reconocida por la excelencia del servicio a domicilio, destacándonos por calidad, compromiso, innovación y confianza para cada hogar.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">
+Precios por Prenda
+</h2>
+
+<div class="table-box">
+
+<table>
+
+<tr>
+<th>Servicio</th>
+<th>Precio</th>
+</tr>
+
+<tr>
+<td>Pantalón, bermuda o pantaloneta</td>
+<td>$10.000</td>
+</tr>
+
+<tr>
+<td>Camisa, blusa, polo o camiseta</td>
+<td>$10.000</td>
+</tr>
+
+<tr>
+<td>Falda corta</td>
+<td>$10.000</td>
+</tr>
+
+<tr>
+<td>Falda larga</td>
+<td>$13.500</td>
+</tr>
+
+<tr>
+<td>Saco, suéter o buzo</td>
+<td>$10.000</td>
+</tr>
+
+<tr>
+<td>Vestido mujer corto</td>
+<td>$13.500</td>
+</tr>
+
+<tr>
+<td>Vestido mujer largo</td>
+<td>$14.000</td>
+</tr>
+
+<tr>
+<td>Vestido de coctel</td>
+<td>$40.000</td>
+</tr>
+
+<tr>
+<td>Trajes o sastres</td>
+<td>$16.000</td>
+</tr>
+
+<tr>
+<td>Chaqueta sencilla</td>
+<td>$14.000</td>
+</tr>
+
+<tr>
+<td>Chaqueta mediana</td>
+<td>$17.000</td>
+</tr>
+
+<tr>
+<td>Chaqueta grande</td>
+<td>$18.000</td>
+</tr>
+
+<tr>
+<td>Chaqueta de cuero</td>
+<td>$40.000</td>
+</tr>
+
+<tr>
+<td>Planchado por prenda</td>
+<td>$5.500</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">
+Ropa de Cama
+</h2>
+
+<div class="table-box">
+
+<table>
+
+<tr>
+<th>Servicio</th>
+<th>Precio</th>
+</tr>
+
+<tr>
+<td>Cobija sencilla o doble</td>
+<td>$30.000 - $35.000</td>
+</tr>
+
+<tr>
+<td>Cobija Queen o King</td>
+<td>$35.000</td>
+</tr>
+
+<tr>
+<td>Claros, blancos y mal olor</td>
+<td>$40.000</td>
+</tr>
+
+<tr>
+<td>Cobija de plumas</td>
+<td>$35.000</td>
+</tr>
+
+<tr>
+<td>Mantas</td>
+<td>$28.000</td>
+</tr>
+
+<tr>
+<td>Juego de sábanas</td>
+<td>$17.000</td>
+</tr>
+
+<tr>
+<td>Almohada</td>
+<td>$14.000</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<section id="contacto">
+
+<h2 class="title">
+Solicita tu Recogida
+</h2>
+
+<p class="subtitle">
+Agenda tu servicio rápidamente y recibe atención personalizada.
+</p>
+
+<div class="form-box">
+
+<form id="pickupForm">
+
+<div class="form-grid">
+
+<input type="text" id="nombre" placeholder="Nombre completo" required>
+
+<input type="text" id="telefono" placeholder="Número de teléfono" required>
+
+<input type="text" id="direccion" placeholder="Dirección de recogida" required>
+
+<select id="servicio">
+
+<option>Plan por Libra</option>
+<option>Plan 12 Prendas</option>
+<option>Servicio por Prenda</option>
+<option>Bolsa Junta</option>
+<option>Bolsa Separada</option>
+<option>Plan Mensual</option>
+
+</select>
+
+<textarea id="mensaje" rows="6" placeholder="Observaciones adicionales"></textarea>
+
+</div>
+
+<button class="submit-btn" type="submit">
+Enviar Solicitud
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>
+LavaListo Express
+</h2>
+
+<p>
+Bogotá • Servicio a domicilio
+</p>
+
+<p>
+WhatsApp: 3166977616
+</p>
+
+<p>
+Tu ropa limpia, tu tiempo libre.
+</p>
+
+</footer>
+
+<a
+class="whatsapp"
+href="https://wa.me/573166977616"
+target="_blank">
+
+WhatsApp
+
+</a>
+
+<script>
+
+const form = document.getElementById('pickupForm');
+
+form.addEventListener('submit', function(e){
+
+e.preventDefault();
+
+const nombre = document.getElementById('nombre').value;
+const telefono = document.getElementById('telefono').value;
+const direccion = document.getElementById('direccion').value;
+const servicio = document.getElementById('servicio').value;
+const mensaje = document.getElementById('mensaje').value;
+
+const texto =
+`Hola LavaListo Express,%0A%0A`
++ `Quiero solicitar recogida.%0A%0A`
++ `Nombre: ${nombre}%0A`
++ `Teléfono: ${telefono}%0A`
++ `Dirección: ${direccion}%0A`
++ `Servicio: ${servicio}%0A`
++ `Observaciones: ${mensaje}`;
+
+window.open(
+`https://wa.me/573166977616?text=${texto}`,
+'_blank'
+);
+
+});
+
+</script>
+
+</body>
+</html>
