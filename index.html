@@ -917,6 +917,249 @@ font-size:30px;
 
 }
 
+/* BUSINESS SECTION */
+
+.business-section{
+position:relative;
+margin-top:80px;
+padding:70px 40px;
+border-radius:45px;
+overflow:hidden;
+background:
+linear-gradient(
+135deg,
+#003cff,
+#00cfff
+);
+color:white;
+box-shadow:
+0 35px 70px rgba(0,0,0,0.14);
+}
+
+.business-glow{
+position:absolute;
+width:400px;
+height:400px;
+background:
+rgba(255,255,255,0.08);
+border-radius:50%;
+top:-120px;
+right:-120px;
+filter:blur(10px);
+}
+
+.business-header{
+position:relative;
+z-index:2;
+text-align:center;
+margin-bottom:60px;
+}
+
+.business-header h2{
+font-size:52px;
+margin-bottom:20px;
+}
+
+.business-header p{
+max-width:900px;
+margin:auto;
+line-height:2;
+font-size:18px;
+}
+
+.business-grid{
+position:relative;
+z-index:2;
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
+gap:28px;
+margin-bottom:50px;
+}
+
+.business-card{
+background:
+rgba(255,255,255,0.12);
+backdrop-filter:blur(10px);
+padding:35px;
+border-radius:35px;
+border:1px solid rgba(255,255,255,0.18);
+transition:0.45s;
+position:relative;
+overflow:hidden;
+}
+
+.business-card::before{
+content:'';
+position:absolute;
+top:-100%;
+left:-40%;
+width:80%;
+height:300%;
+background:
+rgba(255,255,255,0.12);
+transform:rotate(25deg);
+transition:0.7s;
+}
+
+.business-card:hover::before{
+left:130%;
+}
+
+.business-card:hover{
+transform:
+translateY(-12px)
+rotateX(4deg)
+rotateY(-4deg);
+
+background:
+rgba(255,255,255,0.18);
+}
+
+.business-icon{
+font-size:46px;
+margin-bottom:20px;
+}
+
+.business-card h3{
+font-size:28px;
+margin-bottom:20px;
+}
+
+.business-card ul{
+padding-left:20px;
+line-height:2;
+}
+
+/* FEATURES */
+
+.enterprise-features{
+display:flex;
+flex-wrap:wrap;
+gap:18px;
+justify-content:center;
+margin-bottom:55px;
+position:relative;
+z-index:2;
+}
+
+.feature-pill{
+padding:16px 24px;
+background:
+rgba(255,255,255,0.14);
+border-radius:60px;
+font-weight:700;
+backdrop-filter:blur(10px);
+transition:0.35s;
+}
+
+.feature-pill:hover{
+transform:translateY(-6px);
+background:
+rgba(255,255,255,0.22);
+}
+
+/* BENEFITS */
+
+.enterprise-benefits{
+position:relative;
+z-index:2;
+margin-bottom:55px;
+}
+
+.enterprise-benefits h3{
+font-size:38px;
+text-align:center;
+margin-bottom:35px;
+}
+
+.enterprise-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.enterprise-box{
+background:
+rgba(255,255,255,0.10);
+padding:28px;
+border-radius:28px;
+backdrop-filter:blur(10px);
+font-weight:600;
+transition:0.35s;
+}
+
+.enterprise-box:hover{
+transform:translateY(-8px);
+background:
+rgba(255,255,255,0.18);
+}
+
+/* CTA */
+
+.business-cta{
+position:relative;
+z-index:2;
+text-align:center;
+background:
+rgba(255,255,255,0.10);
+padding:45px;
+border-radius:35px;
+backdrop-filter:blur(10px);
+}
+
+.business-cta h3{
+font-size:38px;
+margin-bottom:18px;
+}
+
+.business-cta p{
+line-height:1.9;
+margin-bottom:30px;
+}
+
+.business-btn{
+display:inline-block;
+padding:20px 38px;
+background:#ffe600;
+color:#003cff;
+font-weight:800;
+border-radius:60px;
+text-decoration:none;
+transition:0.35s;
+box-shadow:
+0 15px 35px rgba(0,0,0,0.18);
+}
+
+.business-btn:hover{
+transform:
+translateY(-5px)
+scale(1.03);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:700px){
+
+.business-section{
+padding:45px 22px;
+}
+
+.business-header h2{
+font-size:36px;
+}
+
+.business-cta h3{
+font-size:30px;
+}
+
+.enterprise-benefits h3{
+font-size:30px;
+}
+
+}
+  
 </style>
 
 </head>
@@ -1325,20 +1568,110 @@ Servicio de lavado en agua para prendas de uso diario.
 
 </div>
 
-<div class="custom-service">
+<div class="business-icon">
+👟
+</div>
 
 <h3>
-¿No encuentras el servicio o la prenda que deseas lavar?
+Lavado Especializado
+</h3>
+
+<ul>
+
+<li>Tenis</li>
+<li>Morrales</li>
+<li>Bolsos</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- FEATURES -->
+
+<div class="enterprise-features">
+
+<div class="feature-pill">
+✔️ Lavado
+</div>
+
+<div class="feature-pill">
+✔️ Secado
+</div>
+
+<div class="feature-pill">
+✔️ Doblado
+</div>
+
+<div class="feature-pill">
+✔️ Planchado
+</div>
+
+<div class="feature-pill">
+⚡ Servicio Express
+</div>
+
+<div class="feature-pill">
+🚚 Domicilio Empresarial
+</div>
+
+</div>
+
+<!-- BENEFITS -->
+
+<div class="enterprise-benefits">
+
+<h3>
+💙 Beneficios para tu empresa
+</h3>
+
+<div class="enterprise-grid">
+
+<div class="enterprise-box">
+✅ Productos de alta calidad
+</div>
+
+<div class="enterprise-box">
+✅ Cuidado especializado por tela
+</div>
+
+<div class="enterprise-box">
+✅ Atención personalizada
+</div>
+
+<div class="enterprise-box">
+✅ Facturación empresarial
+</div>
+
+<div class="enterprise-box">
+✅ Convenios mensuales
+</div>
+
+<div class="enterprise-box">
+✅ Servicio puntual y confiable
+</div>
+
+</div>
+
+</div>
+
+<!-- CTA -->
+
+<div class="business-cta">
+
+<h3>
+¿Necesitas un convenio empresarial?
 </h3>
 
 <p>
-¡No te preocupes! 😊 Escríbenos al WhatsApp y validamos tu solicitud.
+Contáctanos y recibe atención personalizada para tu empresa o institución.
 </p>
 
 <a
 href="https://wa.me/573166977616"
 target="_blank"
-class="custom-btn">
+class="business-btn">
 
 📲 WhatsApp 316 697 7616
 
@@ -1346,6 +1679,7 @@ class="custom-btn">
 
 </div>
 
+</div>
 </section>
 
 <section>
