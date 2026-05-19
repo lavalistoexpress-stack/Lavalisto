@@ -3,306 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LavaListo Express</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<title>Test LavaListo</title>
+
 <style>
 
-nav a{
-text-decoration:none;
-color:white;
-font-weight:600;
-transition:.3s;
-}
-
-nav a:hover{
-color:#ffe600;
-}
-
-/* HERO */
-
-.hero{
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#003cff,#00cfff);
 min-height:100vh;
 display:flex;
+justify-content:center;
 align-items:center;
-background:
-radial-gradient(circle at top left, rgba(255,255,255,0.12), transparent 25%),
-linear-gradient(135deg,#003cff 0%,#008cff 50%,#00d9ff 100%);
-overflow:hidden;
-padding-top:120px;
+color:white;
 }
 
-.hero-grid{
-display:grid;
-grid-template-columns:1.1fr 1fr;
-gap:50px;
-align-items:center;
-}
-
-.hero-image{
-position:relative;
-}
-
-.hero-image::before{
-content:'';
-position:absolute;
-inset:-40px;
+.box{
 background:rgba(255,255,255,0.12);
-filter:blur(40px);
-border-radius:50%;
+padding:60px;
+border-radius:30px;
+backdrop-filter:blur(10px);
+text-align:center;
+box-shadow:0 20px 50px rgba(0,0,0,0.2);
 }
 
-.hero-image img{
-width:100%;
-max-width:680px;
-border-radius:40px;
-position:relative;
-box-shadow:0 35px 80px rgba(0,0,0,0.28);
-animation:float 5s ease-in-out infinite;
-}
-
-@keyframes float{
-50%{transform:translateY(-12px);}
-}
-.hero-content{
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-}
-
-.plan-card{
-background:linear-gradient(145deg,white,#f6fbff);
-padding:40px;
-border-radius:38px;
-position:relative;
-overflow:hidden;
-transition:.4s;
-box-shadow:0 22px 50px rgba(0,0,0,0.08);
-}
-
-.plan-card:hover{
-transform:translateY(-12px);
-}
-
-.plan-badge{
-position:absolute;
-top:18px;
-right:18px;
-background:#ffe600;
-padding:10px 18px;
-border-radius:50px;
-font-size:12px;
-font-weight:800;
-color:#003cff;
-}
-
-.plan-card h3{
-font-size:30px;
-margin-bottom:18px;
-color:#003cff;
-}
-
-.plan-price{
-font-size:48px;
-font-weight:800;
-color:#00b894;
+h1{
+font-size:60px;
 margin-bottom:20px;
 }
 
-.plan-card ul{
-padding-left:20px;
-line-height:2;
-color:#61708f;
-}
-/* BUSINESS */
-.submit-btn{
-margin-top:24px;
-width:100%;
-padding:22px;
-border:none;
-border-radius:22px;
-background:linear-gradient(135deg,#003cff,#00cfff);
-color:white;
-font-size:18px;
-font-weight:700;
-cursor:pointer;
-transition:.35s;
+p{
+font-size:22px;
+line-height:1.8;
 }
 
-.submit-btn:hover{
-transform:translateY(-5px);
-}
+</style>
 
-/* FOOTER */
+</head>
 
-footer{
-background:#002c8f;
-color:white;
-text-align:center;
-padding:70px 20px;
-}
+<body>
 
-footer h2{
-font-size:40px;
-margin-bottom:15px;
-}
+<div class="box">
 
-.whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#25D366;
-color:white;
-padding:18px 28px;
-border-radius:60px;
-text-decoration:none;
-font-weight:700;
-box-shadow:0 15px 35px rgba(0,0,0,0.24);
-z-index:9999;
-}
-/* RESPONSIVE */
-<li>Oficinas</li>
-<li>Hoteles</li>
-<li>Restaurantes</li>
-<li>Consultorios</li>
-</ul>
-</div>
+<h1>LavaListo Express</h1>
 
-<div class="business-card">
-<div class="business-icon">👟</div>
-<h3>Lavado Especializado</h3>
-<ul>
-<li>Tenis</li>
-<li>Morrales</li>
-<li>Bolsos</li>
-</ul>
-</div>
+<p>
+Si ves esto bonito y azul,<br>
+el problema NO es Netlify.
+</p>
 
 </div>
-
-<div class="benefits-grid">
-<div class="benefit-box">✅ Facturación empresarial</div>
-<div class="benefit-box">✅ Convenios mensuales</div>
-<div class="benefit-box">✅ Atención personalizada</div>
-<div class="benefit-box">✅ Servicio express</div>
-</div>
-
-</div>
-</section>
-
-<section class="tables">
-<div class="container">
-
-<h2 class="title">Precios Especiales</h2>
-
-<div class="table-grid">
-
-<div class="table-card">
-<div class="table-header">Lavado y Planchado</div>
-
-<div class="row"><span>Pantalón / Bermudas</span><span>$10.000</span></div>
-<div class="row"><span>Camisas / Blusas</span><span>$10.000</span></div>
-<div class="row"><span>Vestido corto</span><span>$13.500</span></div>
-<div class="row"><span>Vestido largo</span><span>$14.000</span></div>
-<div class="row"><span>Chaqueta cuero</span><span>$40.000</span></div>
-<div class="row"><span>Zapatillas o Morrales</span><span>$19.000</span></div>
-<div class="row"><span>Desmanche adicional</span><span>$3.000</span></div>
-<div class="row"><span>Planchado por prenda</span><span>$5.500</span></div>
-<div class="row"><span>Planchado por docena</span><span>$58.000</span></div>
-<div class="row"><span>Tintura</span><span>$28.000</span></div>
-
-</div>
-
-<div class="table-card">
-<div class="table-header">Ropa de Cama</div>
-
-<div class="row"><span>Cobija sencilla</span><span>$30K</span></div>
-<div class="row"><span>Cobija Queen</span><span>$35K</span></div>
-<div class="row"><span>Cobija plumas</span><span>$35K</span></div>
-<div class="row"><span>Mantas</span><span>$28K</span></div>
-<div class="row"><span>Juego de sábanas</span><span>$17K</span></div>
-<div class="row"><span>Almohada</span><span>$14K</span></div>
-
-</div>
-</div>
-
-<input type="text" id="nombre" placeholder="Nombre completo" required>
-
-<input type="text" id="telefono" placeholder="Número de teléfono" required>
-
-<textarea id="direccion" rows="3" placeholder="Dirección de recogida" required></textarea>
-
-<select id="servicio" required>
-<option value="">Selecciona un servicio</option>
-<option>Plan por Libra</option>
-<option>Plan 12 Prendas</option>
-<option>Servicio por Prenda</option>
-<option>Bolsa Junta</option>
-<option>Bolsa Separada</option>
-<option>Plan Mensual</option>
-</select>
-
-<textarea id="mensaje" rows="5" placeholder="Observaciones adicionales"></textarea>
-
-</div>
-
-<button class="submit-btn" type="submit">
-Enviar Solicitud
-</button>
-
-</form>
-
-</div>
-
-</div>
-</section>
-
-<footer>
-<h2>LavaListo Express</h2>
-<p>Bogotá • Servicio a domicilio</p>
-<p>WhatsApp: 3166977616</p>
-</footer>
-
-<a class="whatsapp" href="https://wa.me/573166977616" target="_blank">
-WhatsApp
-</a>
-
-<script>
-
-document.getElementById('pickupForm')
-.addEventListener('submit', function(e){
-
-e.preventDefault();
-
-const nombre = document.getElementById('nombre').value;
-const telefono = document.getElementById('telefono').value;
-const direccion = document.getElementById('direccion').value;
-const servicio = document.getElementById('servicio').value;
-const mensaje = document.getElementById('mensaje').value;
-
-const texto = encodeURIComponent(
-`Hola LavaListo Express,
-
-Quiero solicitar recogida.
-
-Nombre: ${nombre}
-
-Teléfono: ${telefono}
-
-Dirección: ${direccion}
-
-Servicio solicitado: ${servicio}
-
-Observaciones: ${mensaje}`
-);
-
-window.open(
-`https://wa.me/573166977616?text=${texto}`,
-'_blank'
-);
-
-});
-
-</script>
 
 </body>
-  </html>
+</html>
