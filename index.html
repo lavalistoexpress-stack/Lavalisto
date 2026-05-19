@@ -6,66 +6,7 @@
 <title>LavaListo Express</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-background:#f5fbff;
-color:#0d2b6b;
-overflow-x:hidden;
-}
-
-section{
-padding:90px 20px;
-position:relative;
-}
-
-.container{
-max-width:1350px;
-margin:auto;
-}
-/* NAVBAR */
-
-nav{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:18px 6%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-z-index:9999;
-background:rgba(0,0,0,0.15);
-backdrop-filter:blur(14px);
-}
-
-.logo{
-font-size:34px;
-font-weight:800;
-color:white;
-}
-
-.logo span{
-color:#ffe600;
-}
-
-nav ul{
-display:flex;
-gap:30px;
-list-style:none;
-}
 
 nav a{
 text-decoration:none;
@@ -77,222 +18,102 @@ transition:.3s;
 nav a:hover{
 color:#ffe600;
 }
+
 /* HERO */
-font-size:68px;
-line-height:1.05;
-margin-bottom:24px;
-}
 
-.hero-content p{
-font-size:18px;
-line-height:1.9;
-margin-bottom:30px;
-}
-
-.hero-buttons{
+.hero{
+min-height:100vh;
 display:flex;
-gap:18px;
-flex-wrap:wrap;
-margin-bottom:30px;
+align-items:center;
+background:
+radial-gradient(circle at top left, rgba(255,255,255,0.12), transparent 25%),
+linear-gradient(135deg,#003cff 0%,#008cff 50%,#00d9ff 100%);
+overflow:hidden;
+padding-top:120px;
 }
 
-.btn{
-padding:18px 34px;
-border-radius:60px;
-text-decoration:none;
-font-weight:700;
-transition:.35s;
-}
-
-.btn-primary{
-background:#ffe600;
-color:#003cff;
-}
-
-.btn-primary:hover{
-transform:translateY(-5px) scale(1.03);
-}
-
-.btn-secondary{
-border:2px solid rgba(255,255,255,0.4);
-color:white;
-}
-
-.btn-secondary:hover{
-background:white;
-color:#003cff;
-}
-
-.hero-stats{
+.hero-grid{
 display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px;
+grid-template-columns:1.1fr 1fr;
+gap:50px;
+align-items:center;
 }
 
-.stat{
-background:rgba(255,255,255,0.10);
-padding:18px;
-border-radius:22px;
-text-align:center;
-transition:.35s;
+.hero-image{
+position:relative;
 }
 
-.stat:hover{
-transform:translateY(-6px);
-background:rgba(255,255,255,0.18);
-}
-/* TITLES */
-.card:hover::before{
-left:130%;
-}
-
-.card:hover{
-transform:translateY(-14px) rotateX(4deg);
-box-shadow:0 30px 70px rgba(0,0,0,0.14);
-}
-
-.card-icon{
-font-size:52px;
-margin-bottom:20px;
-}
-
-.card h3{
-font-size:32px;
-margin-bottom:18px;
-color:#003cff;
-}
-
-.card p{
-line-height:1.9;
-color:#61708f;
-margin-bottom:18px;
-}
-
-.card ul{
-padding-left:20px;
-line-height:2;
-color:#61708f;
-}
-
-.price{
-margin-top:24px;
-font-size:42px;
-font-weight:800;
-color:#00b894;
-}
-
-/* PREMIUM PLANS */
-top:-150px;
-filter:blur(10px);
-}
-
-.business .title,
-.business .subtitle{
-color:white;
-}
-
-.business-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:28px;
-margin-top:50px;
-}
-
-.business-card{
-background:rgba(255,255,255,0.10);
-padding:35px;
-border-radius:35px;
-backdrop-filter:blur(10px);
-transition:.4s;
-border:1px solid rgba(255,255,255,0.12);
-}
-
-.business-card:hover{
-transform:translateY(-10px);
-background:rgba(255,255,255,0.18);
-}
-
-.business-card h3{
-font-size:28px;
-margin:18px 0;
-}
-
-.business-card ul{
-padding-left:20px;
-line-height:2;
-}
-
-.business-icon{
-font-size:48px;
-}
-/* BENEFITS */
-
-.benefits-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:22px;
-margin-top:45px;
-}
-
-.benefit-box{
+.hero-image::before{
+content:'';
+position:absolute;
+inset:-40px;
 background:rgba(255,255,255,0.12);
-padding:28px;
-border-radius:28px;
-backdrop-filter:blur(10px);
-transition:.35s;
+filter:blur(40px);
+border-radius:50%;
 }
 
-.benefit-box:hover{
-transform:translateY(-8px);
+.hero-image img{
+width:100%;
+max-width:680px;
+border-radius:40px;
+position:relative;
+box-shadow:0 35px 80px rgba(0,0,0,0.28);
+animation:float 5s ease-in-out infinite;
 }
 
-/* TABLES */
-
-.tables{
-background:white;
+@keyframes float{
+50%{transform:translateY(-12px);}
 }
-
-.table-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+.hero-content{
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:30px;
 }
 
-.table-card{
-background:#fff;
-border-radius:35px;
+.plan-card{
+background:linear-gradient(145deg,white,#f6fbff);
+padding:40px;
+border-radius:38px;
+position:relative;
 overflow:hidden;
-box-shadow:0 18px 45px rgba(0,0,0,0.08);
+transition:.4s;
+box-shadow:0 22px 50px rgba(0,0,0,0.08);
 }
 
-.table-header{
-background:linear-gradient(135deg,#003cff,#00cfff);
-padding:28px;
-color:white;
-font-size:28px;
-font-weight:700;
+.plan-card:hover{
+transform:translateY(-12px);
 }
 
-.row{
-display:flex;
-justify-content:space-between;
-gap:20px;
-padding:18px 24px;
-border-bottom:1px solid #edf3ff;
-}
-
-.row span:last-child{
-font-weight:700;
+.plan-badge{
+position:absolute;
+top:18px;
+right:18px;
+background:#ffe600;
+padding:10px 18px;
+border-radius:50px;
+font-size:12px;
+font-weight:800;
 color:#003cff;
 }
-/* CTA */
+
+.plan-card h3{
+font-size:30px;
+margin-bottom:18px;
+color:#003cff;
 }
 
-textarea{
-grid-column:1/3;
-resize:none;
+.plan-price{
+font-size:48px;
+font-weight:800;
+color:#00b894;
+margin-bottom:20px;
 }
 
+.plan-card ul{
+padding-left:20px;
+line-height:2;
+color:#61708f;
+}
+/* BUSINESS */
 .submit-btn{
 margin-top:24px;
 width:100%;
@@ -339,6 +160,84 @@ box-shadow:0 15px 35px rgba(0,0,0,0.24);
 z-index:9999;
 }
 /* RESPONSIVE */
+<li>Oficinas</li>
+<li>Hoteles</li>
+<li>Restaurantes</li>
+<li>Consultorios</li>
+</ul>
+</div>
+
+<div class="business-card">
+<div class="business-icon">👟</div>
+<h3>Lavado Especializado</h3>
+<ul>
+<li>Tenis</li>
+<li>Morrales</li>
+<li>Bolsos</li>
+</ul>
+</div>
+
+</div>
+
+<div class="benefits-grid">
+<div class="benefit-box">✅ Facturación empresarial</div>
+<div class="benefit-box">✅ Convenios mensuales</div>
+<div class="benefit-box">✅ Atención personalizada</div>
+<div class="benefit-box">✅ Servicio express</div>
+</div>
+
+</div>
+</section>
+
+<section class="tables">
+<div class="container">
+
+<h2 class="title">Precios Especiales</h2>
+
+<div class="table-grid">
+
+<div class="table-card">
+<div class="table-header">Lavado y Planchado</div>
+
+<div class="row"><span>Pantalón / Bermudas</span><span>$10.000</span></div>
+<div class="row"><span>Camisas / Blusas</span><span>$10.000</span></div>
+<div class="row"><span>Vestido corto</span><span>$13.500</span></div>
+<div class="row"><span>Vestido largo</span><span>$14.000</span></div>
+<div class="row"><span>Chaqueta cuero</span><span>$40.000</span></div>
+<div class="row"><span>Zapatillas o Morrales</span><span>$19.000</span></div>
+<div class="row"><span>Desmanche adicional</span><span>$3.000</span></div>
+<div class="row"><span>Planchado por prenda</span><span>$5.500</span></div>
+<div class="row"><span>Planchado por docena</span><span>$58.000</span></div>
+<div class="row"><span>Tintura</span><span>$28.000</span></div>
+
+</div>
+
+<div class="table-card">
+<div class="table-header">Ropa de Cama</div>
+
+<div class="row"><span>Cobija sencilla</span><span>$30K</span></div>
+<div class="row"><span>Cobija Queen</span><span>$35K</span></div>
+<div class="row"><span>Cobija plumas</span><span>$35K</span></div>
+<div class="row"><span>Mantas</span><span>$28K</span></div>
+<div class="row"><span>Juego de sábanas</span><span>$17K</span></div>
+<div class="row"><span>Almohada</span><span>$14K</span></div>
+
+</div>
+</div>
+
+<input type="text" id="nombre" placeholder="Nombre completo" required>
+
+<input type="text" id="telefono" placeholder="Número de teléfono" required>
+
+<textarea id="direccion" rows="3" placeholder="Dirección de recogida" required></textarea>
+
+<select id="servicio" required>
+<option value="">Selecciona un servicio</option>
+<option>Plan por Libra</option>
+<option>Plan 12 Prendas</option>
+<option>Servicio por Prenda</option>
+<option>Bolsa Junta</option>
+<option>Bolsa Separada</option>
 <option>Plan Mensual</option>
 </select>
 
@@ -406,4 +305,4 @@ window.open(
 </script>
 
 </body>
-</html>
+  </html>
