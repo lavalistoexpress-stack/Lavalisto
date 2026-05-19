@@ -188,14 +188,17 @@ transform:translateY(-10px);
 
 .hero-content{
 background:rgba(255,255,255,0.12);
-padding:50px;
+padding:65px;
+max-width:620px;
 border-radius:35px;
 backdrop-filter:blur(10px);
 color:white;
 }
 
 .hero-content h1{
-font-size:70px;
+font-size:84px;
+line-height:0.95;
+letter-spacing:-3px;
 line-height:1.05;
 margin-bottom:25px;
 }
@@ -427,7 +430,11 @@ gap:28px;
 }
 
 .business-card{
-background:rgba(255,255,255,0.12);
+background:rgba(255,255,255,0.10);
+border:1px solid rgba(255,255,255,0.18);
+box-shadow:
+0 25px 60px rgba(0,0,0,0.12),
+inset 0 1px 1px rgba(255,255,255,0.15);
 padding:35px;
 border-radius:35px;
 backdrop-filter:blur(10px);
@@ -620,6 +627,44 @@ z-index:999;
 
 @media(max-width:980px){
 
+.bubble{
+position:absolute;
+border-radius:50%;
+background:rgba(255,255,255,0.10);
+backdrop-filter:blur(4px);
+animation:floatBubble 8s ease-in-out infinite;
+}
+
+.bubble1{
+width:140px;
+height:140px;
+top:120px;
+right:180px;
+}
+
+.bubble2{
+width:70px;
+height:70px;
+bottom:120px;
+left:120px;
+animation-delay:2s;
+}
+
+.bubble3{
+width:40px;
+height:40px;
+top:320px;
+right:420px;
+animation-delay:4s;
+}
+
+@keyframes floatBubble{
+
+50%{
+transform:translateY(-25px);
+}
+
+}
 .hero-container,
 .form-grid{
 grid-template-columns:1fr;
@@ -756,8 +801,12 @@ Ver Servicios
 
 </div>
 
-</section>
+<div class="bubble bubble1"></div>
+<div class="bubble bubble2"></div>
+<div class="bubble bubble3"></div>
 
+</section>
+   
 <section id="hogar">
 
 <div class="container">
